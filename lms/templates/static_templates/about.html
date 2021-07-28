@@ -1,0 +1,30 @@
+<%page expression_filter="h"/>
+<%! from django.utils.translation import ugettext as _ %>
+<%inherit file="../main.html" />
+
+<%block name="pagetitle">${_("About")}</%block>
+
+<style>
+    .subtitulo{
+        color: #520097;
+    }
+    .titulo{
+        color: #1E2DBE !important;
+	font-weight:bold;
+    }
+</style>
+<main id="main" aria-label="Content" tabindex="-1" style="line-height:2; text-align: justify;">
+    <section class="container about">
+        <h1>
+            <%block name="pageheader"><span class="titulo">${page_header or _("About")}</span></%block>
+        </h1>
+	<br>
+        <p>
+            ## <%block name="pagecontent">${page_content or _("This page left intentionally blank. Feel free to add your own content.")}</%block>
+            <%block name="pagecontent">
+		La OIT, fundada en 1919, es una agencia especializada de las Naciones Unidas que tiene como característica distintiva el tripartismo, ya que cada uno de sus 187 Estados miembros está representado por los gobiernos y por las organizaciones de empleadores y de trabajadores. La organización, reconocida en 1969 con el Premio Nobel de la Paz, tuvo su origen en la Parte XIII del Tratado de Paz de Versalles que puso fin a la Primera Guerra Mundial como respuesta a los movimientos sociales que exigían justicia social y condiciones de vida más dignos para las y los trabajadores del mundo.
+
+	    </%block>
+	
+    </section>
+</main>
