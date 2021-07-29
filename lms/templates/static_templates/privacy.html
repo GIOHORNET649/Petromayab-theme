@@ -1,0 +1,51 @@
+<%page expression_filter="h"/>
+<%! from django.utils.translation import ugettext as _ %>
+<%inherit file="../main.html" />
+
+##<%block name="pagetitle">${_("Terms of Service")}</%block>
+<%block name="pagetitle">Políticas de privacidad</%block>
+<style>
+    .subtitulo{
+        color: #000000;
+	font-weight: bold;
+    }
+    .titulo{
+        color: #000000 !important;
+	font-weight: bold;
+    }
+	.negrita{
+		color: #000000;
+	}
+	.flex-header{
+		display: flex;
+	}
+</style>
+<main id="main" aria-label="Content" tabindex="-1" style="line-height:2; text-align: justify;">
+    <section class="container about">
+        
+		<div class="flex-header">
+			<img><img>
+		</div>
+		<h1>
+            ##<%block name="pageheader">${page_header or _("Terms of Service")}</%block>
+			<%block name="pageheader"><span class="titulo">Aviso de privacidad simplificado</span></%block>
+        </h1>
+        <p>
+            ##<%block name="pagecontent">${page_content or _("This page left intentionally blank. Feel free to add your own content.")}</%block>
+			<%block name="pagecontent">
+				<p>
+					<span class="negrita">“GRUPO PETROMAYAB”</span> es responsable del tratamiento de sus datos personales, con domicilio en; en calle 30, número 649, Colonia Ciudad Industrial, Mérida, Yucatán. C.P. 97288. Derivado de la relación laboral, éste recopilará y llevará a cabo el tratamiento manera enunciativa más no limitativa, de sus datos personales y/o datos personales sensibles de: Identificación, contacto, laborales, patrimoniales, académicos, salud. Lo anterior de conformidad con los principios y en términos de lo dispuesto en la Ley Federal de Protección de Datos Personales en Posesión de los Particulares (LFPDPPP), su Reglamento y la legislación aplicable en la materia.  
+				</p>
+				<br>
+				<p>
+					Los datos solicitados serán utilizados para cumplir las obligaciones que exigen las normas mexicanas derivadas de la relación laboral. Los mismos serán tratados bajo estrictas medidas de seguridad, siempre garantizando su confidencialidad y seguridad dentro de los parámetros exigidos por la normatividad en protección de datos en México.
+				</p>
+				<br>
+				<p>
+					Si requiere mayor información puede acceder a nuestro aviso de privacidad integral a través de <a style="text-decoration:underline;color: #EA7600 !important;"href="www.petromayab.com">www.petromayab.com</a> y/o contactarse mediante correo electrónico a la siguiente dirección: <a style="text-decoration:underline;color: #EA7600 !important;"href="mailto:comunicacioninterna@petromayab.com.mx">comunicacioninterna@petromayab.com.mx</a>
+				</p>
+				
+			</%block>
+		</p>
+    </section>
+</main>
