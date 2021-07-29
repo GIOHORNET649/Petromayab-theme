@@ -25,8 +25,30 @@ height:60px!important;
 .facebook-icon{
     padding:5px 10px;
 }
+@media screen and (min-width: 980px){
+.home>header .outer-wrapper {
+    position: relative;
+    margin: 0 auto;
+    padding: 60px 500px 60px 60px;
+    max-width: 1200px;
+}
+}
+.home>header .title {
+    background: rgba(255,255,255,0.75) !important;
+    border-radius: 25px !important;
+}
+
+
 .twitter-icon{
     padding:5px;
+}
+.global-header .nav-links .secondary a.sign-in-btn, .global-header .nav-links .secondary .nav-item a.shopping-cart {
+    background-color: #EA7600 !important;
+}
+
+.home>header .title>.heading-group {
+	display:block;
+	font-size:x-large;
 }
 
 .icon-footer {
@@ -39,8 +61,8 @@ height:60px!important;
 }
 .icon-footer:hover {
     color: white;
-    background-color: #FA3C4B!important;
-    border: 1px solid #FA3C4B!important;
+    background-color: #EA7600!important;
+    border: 1px solid #EA7600!important;
 }
 a.icon-footer:hover{
 	text-decoration:none;
@@ -63,10 +85,23 @@ a.media-link:hover, a.media-link:focus, a.media-lin:active {
     width: 100%;
     overflow: hidden;
     padding-bottom: 10px;
-    border-bottom: 3px solid #FA3C4B!important;
+    border-bottom: 3px solid #EA7600!important;
     box-shadow: 0 1px 5px 0 rgb(0 0 0 / 10%);
     background: #fff;
     line-height: 1.5;
+}
+ .wrapper-footer footer#footer-openedx .wrapper-logo a {
+	display: initial;
+}
+
+.wrapper-footer{
+background : #000;
+}
+.icons{
+	float:right!important;
+}
+.icon-pair{
+	display:contents!important;
 }
 </style>
 % if uses_bootstrap:
@@ -79,7 +114,8 @@ a.media-link:hover, a.media-link:focus, a.media-lin:active {
         % endif
          <div class="wrapper-logo">:
           <p>
-            <a href="/">
+         <img alt="organization logo" src="${static.url('Petromayab-theme/images/footer.png')}" style="width:10%">  
+	  <a href="/">
               ## The default logo is a placeholder.
               ## You can either replace this link entirely or update
               ## the FOOTER_ORGANIZATION_IMAGE in Django settings.
@@ -88,13 +124,16 @@ a.media-link:hover, a.media-link:focus, a.media-lin:active {
               ## (e.g. a blog or marketing front-end) to provide a consistent
               ## user experience.  See the branding app for details.
               ## <img alt="organization logo" src="${footer['logo_image']}">
-              <img alt="organization logo" src="${static.url('OIT-theme/images/ES_ILO_Organization_Horizontal_RGB_Blue.svg')}" style="width:80%">
+              <img alt="organization logo" src="${static.url('Petromayab-theme/images/powered-by.png')}" style="width:15%">
             </a>
+<img src="https://lh4.googleusercontent.com/XesooZEwLXszorunKuqcWNP4lVQCWYR37FEkiZn-Lf0RdjsMroCGchsbDhoeSFRYLyjRONT1SAd6N1lZLbjG9DCt_kFcgYzz8zN_cD53ZaFkSMvLe-_A_P1uQYhXWudSYQ_x7pgd" style="
+    float: right;
+    width: 15%;
+">
           </p>
         </div> 
           ## Site operators: Please do not remove this paragraph! This attributes back to edX and makes your acknowledgement of edX's trademarks clear.
          <!-- <p class="copyright">${footer['copyright']} ${u" | {icp}".format(icp=getattr(settings,'ICP_LICENSE')) if getattr(settings,'ICP_LICENSE',False) else ""}</p>-->
-	<p class="copyright">Todos los derechos reservados excepto donde se indica.</p>
           <nav class="navbar legal-nav navbar-expand-sm" aria-label="${_('Legal')}">
             <ul class="navbar-nav">
               % for item_num, link in enumerate(footer['legal_links'], start=1):
@@ -110,7 +149,8 @@ a.media-link:hover, a.media-link:focus, a.media-lin:active {
 		</li>--!>
             </ul>
           </nav>
-        </div>
+       <p class="copyright">Todos los derechos reservados excepto donde se indica.</p>
+	 </div>
         <div class="col-md-3">
           ## Please leave this link and use one of the logos provided
           ## The OpenEdX link may be hidden when this view is served
@@ -142,7 +182,13 @@ a.media-link:hover, a.media-link:focus, a.media-lin:active {
       
 	  <div class="colophon">
 	  <nav class="nav-colophon" aria-label="${_('About')}">
-          ##<ol>
+        <div class="icons">
+				<div class="icon-pair">
+				<a class="media-link" href="https://www.facebook.com/OITMexico" target="_blank"><span class="icon-footer facebook-icon fa fa-facebook"></span></a>
+				<a class="media-link" href="https://twitter.com/OITMexico" target="_blank"><span class="icon-footer twitter-icon fa fa-twitter"></span></a>
+				</div>
+			</div>  
+	##<ol>
               ##% for item_num, link in enumerate(footer['navigation_links'], start=1):
               ##<li class="nav-colophon-0${item_num}">
                 ##<a id="${link['name']}" href="${link['url']}">${link['title']} algo</a>
@@ -150,14 +196,14 @@ a.media-link:hover, a.media-link:focus, a.media-lin:active {
               ##% endfor
           ##</ol>
           <ul style="list-style-type:none;">
-            <li style="padding:5px;color:#1E2DBE">
-              <b><a href="/contact" target="_blank"style="color:#1E2DBE!important">${_('Contact')}</a></b>
+            <li style="padding:5px;color:white">
+              <b><a href="/contact" target="_blank"style="color:white!important">${_('Contact')}</a></b>
             </li>
             ##<li style="padding:5px;">
               ##<b><a href="/faq">${_('FAQ')}</a></b>
             ##</li>
-            <li style="padding:5px;color:#1E2DBE!important">
-              <b><a href="/about" target="_blank"style="color:#1E2DBE!important">${_('About')}</a></b>
+            <li style="padding:5px;color:white!important">
+              <b><a href="/about" target="_blank"style="color:white!important">${_('About')}</a></b>
             </li>
           </ul>
 
@@ -169,7 +215,8 @@ a.media-link:hover, a.media-link:focus, a.media-lin:active {
 
         <div class="wrapper-logo">
           <p>
-            <a href="/">
+	<span><img alt="organization logo" src="${static.url('Petromayab-theme/images/footer.png')}" style="width:10%"></span>
+        <span>    <a href="/">
               ## The default logo is a placeholder.
               ## You can either replace this link entirely or update
               ## the FOOTER_ORGANIZATION_IMAGE in Django settings.
@@ -178,8 +225,12 @@ a.media-link:hover, a.media-link:focus, a.media-lin:active {
               ## (e.g. a blog or marketing front-end) to provide a consistent
               ## user experience.  See the branding app for details.
               ## <img alt="organization logo" src="${footer['logo_image']}">
-              <img alt="organization logo" src="${static.url('OIT-theme/images/ES_ILO_Organization_Horizontal_RGB_Blue.svg')}" style="width:80%">
-            </a>
+              <img alt="organization logo" src="${static.url('Petromayab-theme/images/powered-by.png')}" style="width:15%">
+            </a></span>
+		<img src="https://lh4.googleusercontent.com/XesooZEwLXszorunKuqcWNP4lVQCWYR37FEkiZn-Lf0RdjsMroCGchsbDhoeSFRYLyjRONT1SAd6N1lZLbjG9DCt_kFcgYzz8zN_cD53ZaFkSMvLe-_A_P1uQYhXWudSYQ_x7pgd" style="
+    float: right;
+    width: 15%;
+">
           </p>
         </div>
 
@@ -187,18 +238,17 @@ a.media-link:hover, a.media-link:focus, a.media-lin:active {
 		<div class="row">
 		<div class="col-8">
 			<!--<p class="copyright">${footer['copyright']} ${u" | {icp}".format(icp=getattr(settings,'ICP_LICENSE')) if getattr(settings,'ICP_LICENSE',False) else ""}</p>-->
-<p class="copyright">Todos los derechos reservados excepto donde se indica.</p>
 			<nav class="nav-legal" aria-label="${_('Legal')}">
-          <ul>
+          <ul style="font-weight:700; padding-bottom:15px">
             % for item_num, link in enumerate(footer['legal_links'], start=1):
               % if item_num == 1:
               <li class="nav-legal-0${item_num}">
-                <a href="https://www.ilo.org/global/privacy-policy/lang--es/index.htm" target="_blank">Política de privacidad</a>
+                <a style = "font-size: 20px"href="https://www.ilo.org/global/privacy-policy/lang--es/index.htm" target="_blank">Política de privacidad</a>
               </li>
               % endif
 			  % if item_num == 3:
               <li class="nav-legal-0${item_num}">
-                <a href="${link['url']}">${link['title']}</a>
+                <a style = "font-size: 20px"  href="${link['url']}">${link['title']}</a>
               </li>
               % endif
             % endfor
@@ -208,15 +258,9 @@ a.media-link:hover, a.media-link:focus, a.media-lin:active {
 			</li>--!>
 
           </ul>
-        </nav>
+       <p class="copyright">Todos los derechos reservados excepto donde se indica.</p>
+	 </nav>
 		</div>
-		<div class="col-4">
-			<div class="icons">
-				<div class="icon-pair">
-				<a class="media-link" href="https://www.facebook.com/OITMexico" target="_blank"><span class="icon-footer facebook-icon fa fa-facebook"></span></a>
-				<a class="media-link" href="https://twitter.com/OITMexico" target="_blank"><span class="icon-footer twitter-icon fa fa-twitter"></span></a>
-				</div>
-			</div>
 		</div>
       </div>
 
