@@ -1,7 +1,9 @@
 <%page expression_filter="h"/>
-<%! from django.utils.translation import ugettext as _ %>
+<%! 
+  from django.utils.translation import ugettext as _
+  from django.core.urlresolvers import reverse    
+%>
 <%inherit file="../main.html" />
-
 ##<%block name="pagetitle">${_("Terms of Service")}</%block>
 <%block name="pagetitle">Políticas de privacidad</%block>
 <style>
@@ -18,13 +20,15 @@
 	}
 	.flex-header{
 		display: flex;
+		justify-content:space-between;
 	}
 </style>
 <main id="main" aria-label="Content" tabindex="-1" style="line-height:2; text-align: justify;">
     <section class="container about">
         
 		<div class="flex-header">
-			<img><img>
+			<img src="https://crezee.academy/asset-v1:AceleraCenter+CIMF.01+2020+type@asset+block@logo-privacidad.png" style="width:15%">
+			<img src="https://crezee.academy/asset-v1:AceleraCenter+CIMF.01+2020+type@asset+block@imagen_aviso_privacidad.png" style="width:25%">
 		</div>
 		<h1>
             ##<%block name="pageheader">${page_header or _("Terms of Service")}</%block>

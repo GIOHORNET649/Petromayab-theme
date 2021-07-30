@@ -203,7 +203,7 @@ background : #000;
               ##<b><a href="/faq">${_('FAQ')}</a></b>
             ##</li>
             <li style="padding:5px;color:white!important">
-              <b><a href="/about" target="_blank"style="color:white!important">${_('About')}</a></b>
+              <b><a href="https://petromayab.com/nosotros/" target="_blank"style="color:white!important">${_('About')}</a></b>
             </li>
           </ul>
 
@@ -243,7 +243,7 @@ background : #000;
             % for item_num, link in enumerate(footer['legal_links'], start=1):
               % if item_num == 1:
               <li class="nav-legal-0${item_num}">
-                <a style = "font-size: 20px"href="https://www.ilo.org/global/privacy-policy/lang--es/index.htm" target="_blank">Política de privacidad</a>
+                <a style = "font-size: 20px"href="${link['url']}" target="_blank">Política de privacidad</a>
               </li>
               % endif
 			  % if item_num == 3:
