@@ -150,7 +150,11 @@ a:visited:not(.btn) {
 a.icon-footer:hover {
     text-decoration: none;
 }
-
+h2, .home>header .title>.heading-group p, section.outside-app h1 {
+    color: #000;
+    font: normal 1.2em/1.2em "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    margin-bottom: 15px;
+}
 a:not(.btn):hover,
 a:not(.btn):focus,
 a:visited:not(.btn):hover,
